@@ -5,7 +5,7 @@ using Storage.Sql;
 
 public static class PrepDb
 {
-    public static void PreparePopulation(IApplicationBuilder app)
+    public static void PrepareExerciseData(IApplicationBuilder app)
     {
         using var serviceScope = app.ApplicationServices.CreateScope();
         SeedData(serviceScope.ServiceProvider.GetService<AppDbContext>());

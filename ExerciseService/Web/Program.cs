@@ -5,7 +5,7 @@ using Web.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbServices();
-builder.Services.AddServices();
+builder.Services.AddServices(builder.Configuration);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -25,6 +25,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-PrepDb.PreparePopulation(app);
+PrepDb.PrepareExerciseData(app);
 
 app.Run();
