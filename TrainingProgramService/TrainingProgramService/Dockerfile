@@ -3,22 +3,17 @@ WORKDIR /source
 
 # copy csproj and restore as distinct layers
 COPY *.sln .
-COPY Core/*.csproj ./Core/
-COPY Storage.Sql/*.csproj ./Storage.Sql/
-COPY Web/*.csproj ./Web/
+COPY *.csproj ./
 
 RUN dotnet restore
 
 # copy everything else and build app
-COPY Core/. ./Core/
-COPY Storage.Sql/. ./Storage.Sql/
-COPY Web/. ./Web/
+COPY . ./
 
-WORKDIR /source/Web
 RUN dotnet publish -c release -o out
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=build /source/Web/out ./
-ENTRYPOINT ["dotnet", "Web.dll"]
+COPY --from=build /source/out ./
+ENTRYPOINT ["dotnet", "TrainingProgramService.dll"]
