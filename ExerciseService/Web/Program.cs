@@ -1,11 +1,12 @@
 using Storage.Sql;
+using Storage.Sql.EntityFramework;
 using Web;
-using Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbServices();
-builder.Services.AddServices(builder.Configuration);
+var config = builder.Configuration.Get<AppSettings>();
+builder.Services.AddDbServices(config.SqlServer);
+builder.Services.AddServices(config.TrainingClient);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -25,6 +26,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-PrepDb.PrepareExerciseData(app);
+using var serviceScope = ((IApplicationBuilder)app).ApplicationServices.CreateScope();
+DbInitializer.SeedData(serviceScope.ServiceProvider.GetService<AppDbContext>());
 
 app.Run();

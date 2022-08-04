@@ -1,7 +1,8 @@
-namespace Storage.Sql;
+namespace Storage.Sql.Repositories;
 
 using Core.Models;
 using Core.Repositories;
+using EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

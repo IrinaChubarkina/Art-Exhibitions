@@ -1,4 +1,4 @@
-namespace Storage.Sql;
+namespace Storage.Sql.EntityFramework;
 
 using Core.Models;
 using Microsoft.EntityFrameworkCore;
