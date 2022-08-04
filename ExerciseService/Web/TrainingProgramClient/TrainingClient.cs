@@ -27,7 +27,7 @@ public class TrainingClient : ITrainingClient
             Encoding.UTF8,
             "application/json");
 
-        var url = _config.ApiBaseUri + "/api/exercises";
+        var url = _config.ApiBaseUri + "/api/tr/exercises";
         var response = await _httpClient.PostAsync(url, httpContent);
 
         if (response.IsSuccessStatusCode)

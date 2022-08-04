@@ -3,7 +3,7 @@ namespace TrainingProgramService.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("api/exercises")]
+[Route("api/tr/exercises")]
 public class ExercisesController : ControllerBase
 {
     public ExercisesController()
