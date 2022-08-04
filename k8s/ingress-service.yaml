@@ -7,20 +7,20 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec: 
   rules:
-    - host: irina.com
-      http:
-        paths:
-          - path: /api/exercises
-            pathType: Prefix
-            backend: 
-              service: 
-                name: exercises-clusterip-srv
-                port: 
-                  number: 80
-          - path: /api/tr/exercises
-            pathType: Prefix
-            backend: 
-              service: 
-                name: training-programs-clusterip-srv
-                port: 
-                  number: 80
+  - host: irina.com
+    http:
+      paths:
+      - path: /api/exercises
+        pathType: Prefix
+        backend: 
+          service: 
+            name: exercises-clusterip-srv
+            port: 
+              number: 80
+      - path: /api/tr/exercises
+        pathType: Prefix
+        backend: 
+          service: 
+            name: training-programs-clusterip-srv
+            port: 
+              number: 80

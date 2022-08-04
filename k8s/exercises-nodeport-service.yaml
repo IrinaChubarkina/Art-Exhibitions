@@ -7,7 +7,7 @@ spec:
   selector:
     app: exerciseservice
   ports:
-    - name: exerciseservice
-      protocol: TCP
-      port: 80
-      targetPort: 80
+  - name: exerciseservice
+    protocol: TCP
+    port: 80
+    targetPort: 80
