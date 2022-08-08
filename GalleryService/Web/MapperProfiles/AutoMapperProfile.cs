@@ -9,13 +9,10 @@ public class AutoMapperProfile : Profile
 {
     public AutoMapperProfile()
     {
-        CreateMap<Gallery, GalleryResponse>()
-            .ReverseMap();
+        CreateMap<Gallery, GalleryResponse>();
 
-        CreateMap<Gallery, CreateGalleryRequest>()
-            .ReverseMap();
+        CreateMap<CreateGalleryRequest, Gallery>();
         
-        CreateMap<GalleryResponse, GalleryPublishedDto>()
-            .ReverseMap();
+        CreateMap<GalleryResponse, GalleryPublishedDto>();
     }
 }

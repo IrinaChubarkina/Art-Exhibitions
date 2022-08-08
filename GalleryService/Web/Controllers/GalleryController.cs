@@ -79,7 +79,7 @@ public class GalleryController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(
-                "Could not send sync request to Training Service: {ex.Message}",
+                "Could not send sync request to Exhibition Service: {ex.Message}",
                 ex.Message);
         }
 
@@ -88,13 +88,13 @@ public class GalleryController : ControllerBase
         try
         {
             var galleryPublishedDto = _mapper.Map<GalleryPublishedDto>(createdGallery);
-            galleryPublishedDto.Event = "Platform_Published";
+            galleryPublishedDto.Event = "Gallery_Published";
             _messageBusClient.PublishNewGallery(galleryPublishedDto);
         }
         catch (Exception ex)
         {
             _logger.LogError(
-                "Could not send async request to Training Service: {ex.Message}",
+                "Could not send async request to Exhibition Service: {ex.Message}",
                 ex.Message);
         }
         return CreatedAtAction(

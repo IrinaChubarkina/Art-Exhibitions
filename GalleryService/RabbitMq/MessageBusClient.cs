@@ -29,7 +29,7 @@ public class MessageBusClient : IMessageBusClient
             _channel = _connection.CreateModel();
 
             _channel.ExchangeDeclare(exchange: "trigger", type: ExchangeType.Fanout);
-            _connection.ConnectionShutdown += RabbitMqConnectionShutDown;
+            _connection.ConnectionShutdown += RabbitMq_ConnectionShutDown;
             _logger.LogInformation("Connected to Message Bus!");
         }
         catch (Exception e)
@@ -76,7 +76,7 @@ public class MessageBusClient : IMessageBusClient
         }
     }
 
-    private void RabbitMqConnectionShutDown(object? sender, ShutdownEventArgs e)
+    private void RabbitMq_ConnectionShutDown(object? sender, ShutdownEventArgs e)
     {
         _logger.LogInformation("Connection shut down");
     }
