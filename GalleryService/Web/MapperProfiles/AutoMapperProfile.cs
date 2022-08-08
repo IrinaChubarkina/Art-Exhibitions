@@ -1,7 +1,7 @@
 namespace Web.MapperProfiles;
 
 using AutoMapper;
-using Core.EventMessaging;
+using Core.AsyncMessaging;
 using Core.Models;
 using FacadeModels;
 

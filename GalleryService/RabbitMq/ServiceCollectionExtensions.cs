@@ -1,6 +1,6 @@
 namespace RabbitMq;
 
-using Core.EventMessaging;
+using Core.AsyncMessaging;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions

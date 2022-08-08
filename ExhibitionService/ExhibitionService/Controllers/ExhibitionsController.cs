@@ -76,7 +76,7 @@ public class ExhibitionsController : ControllerBase
 
         if (!await _galleryRepository.GalleryExists(galleryId, cancellationToken))
         {
-            _logger.LogInformation("...Gallery {galleryId} does not exist", galleryId);
+            _logger.LogInformation("Gallery {galleryId} does not exist", galleryId);
             return NotFound();
         }
 

@@ -2,7 +2,7 @@ namespace RabbitMq;
 
 using System.Text;
 using System.Text.Json;
-using Core.EventMessaging;
+using Core.AsyncMessaging;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 

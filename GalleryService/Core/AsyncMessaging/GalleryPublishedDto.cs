@@ -1,4 +1,4 @@
-﻿namespace Core.EventMessaging;
+﻿namespace Core.AsyncMessaging;
 
 public class GalleryPublishedDto
 {

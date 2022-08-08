@@ -1,13 +1,9 @@
-using RabbitMq;
-using Storage.Sql;
 using Storage.Sql.EntityFramework;
 using Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var config = builder.Configuration.Get<AppSettings>();
-builder.Services.AddDbServices(config.SqlServer);
-builder.Services.AddRabbitMq(config.RabbitMq);
 builder.Services.AddServices(config);
 
 builder.Services.AddControllers();

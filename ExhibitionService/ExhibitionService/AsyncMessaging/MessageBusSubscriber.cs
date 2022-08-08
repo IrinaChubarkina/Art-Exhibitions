@@ -54,7 +54,7 @@ public class MessageBusSubscriber : BackgroundService
 
         var consumer = new EventingBasicConsumer(_channel);
 
-        consumer.Received += async (ModuleHandle, ea) =>
+        consumer.Received += async (moduleHandle, ea) =>
         {
             _logger.LogInformation("Event received!");
 

@@ -51,7 +51,7 @@ public class EventProcessor : IEventProcessor
             {
                 await repository.CreateGallery(gallery, cancellationToken);
                 await repository.SaveChanges(cancellationToken);
-                _logger.LogInformation("Gallery added");
+                _logger.LogInformation("Gallery added!");
             }
         }
         catch (Exception ex)
@@ -69,11 +69,11 @@ public class EventProcessor : IEventProcessor
         switch (eventType?.Event)
         {
             case "Gallery_Published":
-                _logger.LogInformation("...Gallery Published event detected");
+                _logger.LogInformation("Gallery Published event detected");
                 return EventType.GalleryPublished;
 
             default:
-                _logger.LogInformation("...Could not determine event type");
+                _logger.LogInformation("Could not determine event type");
                 return EventType.Undetermined;
         }
     }

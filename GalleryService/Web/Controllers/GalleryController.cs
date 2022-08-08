@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Controllers;
 
 using AutoMapper;
-using Core.EventMessaging;
+using Core.AsyncMessaging;
 using Core.Models;
 using Core.Repositories;
 using ExhibitionClient;
@@ -84,7 +84,6 @@ public class GalleryController : ControllerBase
         }
 
         // Send async message
-
         try
         {
             var galleryPublishedDto = _mapper.Map<GalleryPublishedDto>(createdGallery);
