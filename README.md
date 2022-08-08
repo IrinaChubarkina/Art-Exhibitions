@@ -2,7 +2,7 @@
 
 There are two simple microservices that talk through the Message Bus.
 
-**Gallery Service** is used for managing (create and get) galleries. **Exhibition Service** allows you to manage exhibitions in a specific gallery.
+**Gallery Service** is used for managing (create and get) galleries. **Exhibition Service** is used for managing exhibitions in a specific gallery.
 When a new gallery is created, Gallery Service sends a message to the Message Bus. Exhibition Service is listening.
 
 
