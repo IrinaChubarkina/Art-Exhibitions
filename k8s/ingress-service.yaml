@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+spec: 
+  rules:
+  - host: irina.com
+    http:
+      paths:
+      - path: /api/galleries
+        pathType: Prefix
+        backend: 
+          service: 
+            name: galleries-clusterip-srv
+            port: 
+              number: 80
+      - path: /api/e/galleries
+        pathType: Prefix
+        backend: 
+          service: 
+            name: exhibitions-clusterip-srv
+            port: 
+              number: 80

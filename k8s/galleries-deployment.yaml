@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: galleries-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: galleryservice
+  template:
+    metadata:
+      labels:
+        app: galleryservice
+    spec:
+      containers:
+      - name: galleryservice
+        image: irchubarkina/galleryservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: galleries-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: galleryservice
+  ports:
+  - name: galleryservice
+    protocol: TCP
+    port: 80
+    targetPort: 80
+
