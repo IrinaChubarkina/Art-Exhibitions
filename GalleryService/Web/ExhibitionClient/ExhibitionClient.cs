@@ -27,7 +27,7 @@ public class ExhibitionClient : IExhibitionClient
             Encoding.UTF8,
             "application/json");
 
-        var url = _config.ApiBaseUri + "/api/tr/galleries";
+        var url = _config.ApiBaseUri + "/api/e/galleries";
         var response = await _httpClient.PostAsync(url, httpContent);
 
         if (response.IsSuccessStatusCode)

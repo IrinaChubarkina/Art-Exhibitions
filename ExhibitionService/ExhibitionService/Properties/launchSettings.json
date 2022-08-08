@@ -4,12 +4,12 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:13618",
-      "sslPort": 44318
+      "applicationUrl": "http://localhost:4576",
+      "sslPort": 44348
     }
   },
   "profiles": {
-    "TrainingProgramService": {
+    "ExhibitionService": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,

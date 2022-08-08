@@ -1,4 +1,8 @@
+using ExhibitionService;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddServices();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
