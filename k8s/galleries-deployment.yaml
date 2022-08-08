@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: exercises-deployment
+  name: galleries-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: exerciseservice
+      app: galleryservice
   template:
     metadata:
       labels:
-        app: exerciseservice
+        app: galleryservice
     spec:
       containers:
-      - name: exerciseservice
-        image: irchubarkina/exerciseservice:latest
+      - name: galleryservice
+        image: irchubarkina/galleryservice:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: exercises-clusterip-srv
+  name: galleries-clusterip-srv
 spec:
   type: ClusterIP
   selector:
-    app: exerciseservice
+    app: galleryservice
   ports:
-  - name: exerciseservice
+  - name: galleryservice
     protocol: TCP
     port: 80
     targetPort: 80

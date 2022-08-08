@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exhibitions-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exhibitionservice
+  template:
+    metadata:
+      labels:
+        app: exhibitionservice
+    spec:
+      containers:
+      - name: exhibitionservice
+        image: irchubarkina/exhibitionservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: exhibitions-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: exhibitionservice
+  ports:
+  - name: exhibitionservice
+    protocol: TCP
+    port: 80
+    targetPort: 80
+

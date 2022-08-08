@@ -10,17 +10,17 @@ spec:
   - host: irina.com
     http:
       paths:
-      - path: /api/exercises
+      - path: /api/galleries
         pathType: Prefix
         backend: 
           service: 
-            name: exercises-clusterip-srv
+            name: galleries-clusterip-srv
             port: 
               number: 80
-      - path: /api/tr/exercises
+      - path: /api/e/galleries
         pathType: Prefix
         backend: 
           service: 
-            name: training-programs-clusterip-srv
+            name: exhibitions-clusterip-srv
             port: 
               number: 80

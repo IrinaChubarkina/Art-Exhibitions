@@ -16,4 +16,4 @@ RUN dotnet publish -c release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /source/out ./
-ENTRYPOINT ["dotnet", "TrainingProgramService.dll"]
+ENTRYPOINT ["dotnet", "ExhibitionService.dll"]
