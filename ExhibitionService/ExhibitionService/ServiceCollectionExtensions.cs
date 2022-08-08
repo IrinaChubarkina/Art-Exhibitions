@@ -1,6 +1,7 @@
 namespace ExhibitionService;
 
 using Data;
+using EventProcessing;
 using Microsoft.EntityFrameworkCore;
 
 public static class ServiceCollectionExtensions
@@ -11,6 +12,8 @@ public static class ServiceCollectionExtensions
         
         services.AddScoped<IExhibitionRepository, ExhibitionRepository>();
         services.AddScoped<IGalleryRepository, GalleryRepository>();
+        
+        services.AddSingleton<IEventProcessor, EventProcessor>();
         
         services.AddDbContext<AppDbContext>(opt =>
             opt.UseInMemoryDatabase("InMemory"));

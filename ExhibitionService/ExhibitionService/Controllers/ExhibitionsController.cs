@@ -88,7 +88,7 @@ public class ExhibitionsController : ControllerBase
 
         return CreatedAtAction(
             nameof(GetExhibitionForGallery),
-            new { exhibitionId = createdExhibition.Id },
+            new { exhibitionId = createdExhibition.Id, galleryId = createdExhibition.GalleryId },
             createdExhibition);
     }
 }

@@ -1,10 +1,14 @@
 using ExhibitionService;
+using ExhibitionService.AsyncMessaging;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddServices();
 
 builder.Services.AddControllers();
+
+builder.Services.AddHostedService<MessageBusSubscriber>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
